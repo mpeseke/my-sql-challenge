@@ -1,0 +1,15 @@
+version: "3"
+services:
+  sql:
+    build: ./sql
+    ports:
+    - 3306:3306
+    volumes:
+      - mysql-challenge:/var/lib/mysql
+    env_file:
+      - ./mysql.env
+    command: --default-authentication-plugin=mysql_native_password
+volumes:
+  mysql-challenge:
+
+
